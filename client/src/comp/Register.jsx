@@ -1,80 +1,89 @@
 import React, { useState } from "react";
+import axios from "axios";
 import "../App.css";
+import { useNavigate } from "react-router-dom";
 
 const Register = () => {
-  const [form, setForm] = useState({
+  const navigate = useNavigate();
+  const [formData, setFormData] = useState({
     name: "",
     email: "",
     password: "",
-    confirmPassword: "",
+    skills: ""
   });
 
   const handleChange = (e) => {
-    setForm({ ...form, [e.target.name]: e.target.value });
+    setFormData({
+      ...formData,
+      [e.target.name]: e.target.value
+    });
   };
 
-  const handleSubmit = (e) => {
+  const handleRegister = async (e) => {
     e.preventDefault();
-    if (form.password !== form.confirmPassword) {
-      alert("Passwords do not match!");
-      return;
+    try {
+      await axios.post("http://localhost:5000/api/auth/register", formData);
+      alert("Registration successful! Please login.");
+      navigate("/login");
+    } catch (err) {
+      alert(err.response?.data?.msg || "Registration failed");
     }
-    // Add registration logic here (API call, validation, etc.)
-    alert(`Registering ${form.name} with ${form.email}`);
   };
 
   return (
-    <div className="auth-container">
-      <form className="auth-form" onSubmit={handleSubmit}>
-        <h2>Create your Hackshop account</h2>
+    <div className="home-container">
+      <nav className="navbar">
+        <div className="logo">
+          <span className="hack">Hack</span>
+          <span className="shop">Shop</span>
+        </div>
+      </nav>
 
-        <label htmlFor="name">Full Name</label>
+      <form onSubmit={handleRegister} className="auth-form">
+        <h2>Register</h2>
         <input
-          id="name"
           type="text"
           name="name"
-          placeholder="Your full name"
-          value={form.name}
+          placeholder="Full Name"
+          value={formData.name}
           onChange={handleChange}
           required
         />
-
-        <label htmlFor="email">Email</label>
         <input
-          id="email"
           type="email"
           name="email"
-          placeholder="you@example.com"
-          value={form.email}
+          placeholder="Email"
+          value={formData.email}
           onChange={handleChange}
           required
         />
-
-        <label htmlFor="password">Password</label>
         <input
-          id="password"
           type="password"
           name="password"
-          placeholder="Create a password"
-          value={form.password}
+          placeholder="Password"
+          value={formData.password}
           onChange={handleChange}
           required
         />
-
-        <label htmlFor="confirmPassword">Confirm Password</label>
         <input
-          id="confirmPassword"
-          type="password"
-          name="confirmPassword"
-          placeholder="Confirm your password"
-          value={form.confirmPassword}
+          type="text"
+          name="skills"
+          placeholder="Skills (comma separated)"
+          value={formData.skills}
           onChange={handleChange}
-          required
         />
-
-        <button type="submit" className="submit-btn">
+        <button type="submit" className="start-btn">
           Register
         </button>
+        <p style={{ marginTop: "10px" }}>
+          Already have an account?{" "}
+          <span
+            style={{ color: "#05b726", cursor: "pointer" }}
+            onClick={() => navigate("/login")}
+          >
+            Login
+          </span>
+        </p>
       </form>
     </div>
   );

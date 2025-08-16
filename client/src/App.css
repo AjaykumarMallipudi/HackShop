@@ -1,3 +1,6 @@
+html {
+  scroll-behavior: smooth;
+}
 /* Global Styling */
 body {
   font-family: "Poppins", sans-serif;
@@ -9,6 +12,7 @@ body {
 
 /* Navbar */
 .navbar {
+  position: sticky;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -16,7 +20,7 @@ body {
   background-color: #05b726;
   color: white;
   margin: 20px auto; /* Center navbar with space */
-  border-radius: 40px; /* Rounded corners */
+  border-radius: 20px; /* Rounded corners */
   width: 90%; /* Slightly constrained width */
   box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2); /* Soft shadow */
 }
@@ -76,6 +80,11 @@ body {
 
 .hero-buttons {
   margin-top: 20px;
+  padding: auto;
+  display: flex;
+  gap: 30px; /* Space between buttons */
+
+  transition: background-color 0.3s ease-in-out; /* Smooth transition for hover effect */   
 }
 
 .hero-buttons button {
@@ -274,4 +283,280 @@ body {
 .submit-btn:hover {
   background-color: #047857;
 }
+
+/* Projects Section */
+.explore-page {
+  padding: 60px 20px;
+  background-color: #f8f9fa;
+  text-align: center;
+}
+
+.explore-header h1 {
+  font-size: 2.5rem;
+  color: #222;
+  margin-bottom: 10px;
+}
+
+.explore-header p {
+  font-size: 1.1rem;
+  color: #555;
+  max-width: 600px;
+  margin: 0 auto 40px;
+}
+
+.explore-cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 20px;
+  padding: 0 10px;
+}
+
+.explore-card {
+  background-color: #fff;
+  border-radius: 12px;
+  padding: 20px;
+  text-align: left;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.explore-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.12);
+}
+
+.explore-card h3 {
+  font-size: 1.4rem;
+  margin-bottom: 10px;
+  color: #222;
+}
+
+.explore-card p {
+  font-size: 0.95rem;
+  color: #555;
+  line-height: 1.5;
+}
+
+.start-btn {
+  background-color: #28a745; /* HackShop green */
+  color: #fff;
+  padding: 8px 14px;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 0.9rem;
+  transition: background-color 0.2s ease;
+}
+
+.start-btn:hover {
+  background-color: #218838;
+}
+
+.secondary-btn {
+  background-color: transparent;
+  color: #28a745;
+  border: 1px solid #28a745;
+  padding: 8px 14px;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 0.9rem;
+  transition: all 0.2s ease;
+}
+
+.secondary-btn:hover {
+  background-color: #28a745;
+  color: #fff;
+}
+/*about section*/
+.about-section {
+  padding: 70px 20px;
+  background-color: #0a0a0a;
+  color: #fff;
+}
+
+.about-header {
+  text-align: center;
+  margin-bottom: 50px;
+}
+
+.about-header h2 {
+  font-size: 2.5rem;
+  font-weight: bold;
+}
+
+.about-header h2 span {
+  color: #00ff88;
+}
+
+.about-header p {
+  max-width: 700px;
+  margin: 10px auto;
+  color: #bbb;
+  font-size: 1.1rem;
+}
+
+.about-cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+  gap: 25px;
+  margin-bottom: 60px;
+}
+
+.about-card {
+  background: #111;
+  padding: 25px;
+  border-radius: 14px;
+  border: 1px solid #00ff88;
+  text-align: center;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.about-card .icon {
+  font-size: 2rem;
+  margin-bottom: 10px;
+}
+
+.about-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 8px 20px rgba(0, 255, 136, 0.3);
+}
+
+.roadmap-container {
+  text-align: center;
+  margin-bottom: 50px;
+}
+
+.roadmap-title {
+  font-size: 1.8rem;
+  color: #00ff88;
+  margin-bottom: 20px;
+}
+
+.roadmap {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 15px;
+}
+
+.roadmap-step {
+  background: #111;
+  padding: 12px 20px;
+  border-radius: 8px;
+  border: 1px solid #00ff88;
+  font-weight: 500;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.roadmap-arrow {
+  color: #00ff88;
+  font-size: 1.6rem;
+}
+
+.about-company {
+  max-width: 800px;
+  margin: 0 auto;
+  font-size: 1rem;
+  color: #bbb;
+  text-align: center;
+}
+
+/*contact us*/
+.contactus-section {
+  display: flex;
+  min-height: 100vh;
+  background: linear-gradient(135deg, #000000, #0a2e0a);
+  color: white;
+}
+
+.contactus-left {
+  flex: 1;
+  padding: 60px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.contactus-left h1 {
+  font-size: 2.8rem;
+  margin-bottom: 10px;
+}
+
+.contactus-left h1 span {
+  color: #28a745;
+}
+
+.subtitle {
+  font-size: 1.2rem;
+  margin-bottom: 30px;
+  color: #d4d4d4;
+}
+
+.contactus-form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  margin-bottom: 25px;
+}
+
+.contactus-form input,
+.contactus-form textarea {
+  background: #1e1e1e;
+  border: none;
+  border-radius: 8px;
+  padding: 12px;
+  color: white;
+  font-size: 1rem;
+}
+
+.contactus-form input:focus,
+.contactus-form textarea:focus {
+  outline: 2px solid #28a745;
+}
+
+.contactus-form button {
+  background: #28a745;
+  color: white;
+  padding: 12px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 1rem;
+  transition: background 0.3s ease;
+}
+
+.contactus-form button:hover {
+  background: #1e7a33;
+}
+
+.contactus-info {
+  margin-top: 15px;
+  font-size: 0.95rem;
+}
+
+.contactus-right {
+  flex: 1;
+}
+
+.contactus-right img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+@media (max-width: 900px) {
+  .contactus-section {
+    flex-direction: column;
+  }
+
+  .contactus-right {
+    height: 300px;
+  }
+}
+
+
+
 

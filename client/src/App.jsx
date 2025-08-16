@@ -3,8 +3,8 @@ import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Home from "./comp/Home";
 import Login from "./comp/Login";
 import Register from "./comp/Register"; // Import Register component
-import Explore from "./comp/Explore";
-
+import AboutSection from "./comp/AboutSection";
+import Projects from "./comp/Projects";
 import "./App.css";
 
 function App() {
@@ -14,7 +14,8 @@ function App() {
         <Route path="/" element={<Home />} />
         <Route path="/login" element={<Login />} />
         <Route path="/register" element={<Register />} /> {/* Register route */}
-        <Route path="/explore" element={<Explore />} />
+        <Route path="/about" element={<AboutSection />} />
+        <Route path="/projects" element={<Projects />} />
       </Routes>
     </Router>
   );

@@ -1,0 +1,103 @@
+.footer {
+  background: linear-gradient(135deg, #000000, #0a0a0a);
+  color: #fff;
+  padding-top: 50px;
+  font-family: 'Segoe UI', sans-serif;
+}
+
+.footer-top {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 40px;
+  max-width: 1200px;
+  margin: auto;
+  padding: 0 20px;
+}
+
+.footer-col h2 {
+  color: #00ff88;
+  font-size: 26px;
+  margin-bottom: 10px;
+}
+
+.footer-col h3 {
+  color: #00ff88;
+  font-size: 18px;
+  margin-bottom: 15px;
+}
+
+.footer-col p {
+  font-size: 14px;
+  color: #ccc;
+  line-height: 1.6;
+}
+
+.footer-col ul {
+  list-style: none;
+  padding: 0;
+}
+
+.footer-col ul li {
+  margin: 8px 0;
+}
+
+.footer-col ul li a {
+  color: #ccc;
+  text-decoration: none;
+  transition: 0.3s;
+}
+
+.footer-col ul li a:hover {
+  color: #00ff88;
+}
+
+.newsletter {
+  display: flex;
+  margin-top: 10px;
+}
+
+.newsletter input {
+  padding: 10px;
+  border: none;
+  outline: none;
+  border-radius: 4px 0 0 4px;
+  flex: 1;
+}
+
+.newsletter button {
+  background: #00ff88;
+  border: none;
+  padding: 10px 15px;
+  color: #000;
+  font-weight: bold;
+  cursor: pointer;
+  border-radius: 0 4px 4px 0;
+}
+
+.newsletter button:hover {
+  background: #00cc6a;
+}
+
+.socials {
+  margin-top: 15px;
+}
+
+.socials a {
+  margin-right: 12px;
+  font-size: 20px;
+  color: #ccc;
+  transition: color 0.3s;
+}
+
+.socials a:hover {
+  color: #00ff88;
+}
+
+.footer-bottom {
+  border-top: 1px solid #222;
+  text-align: center;
+  padding: 15px;
+  margin-top: 40px;
+  font-size: 14px;
+  color: #777;
+}
